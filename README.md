@@ -12,6 +12,7 @@ Stuff to read:
 
 Deploy:
 * (already done?) heroku create -b https://github.com/heroku/heroku-buildpack-go.git
+* heroku login
 * heroku git:remote -a botgammon 
 * git push heroku master
 
