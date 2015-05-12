@@ -16,8 +16,7 @@ Deploy:
 
 Correct git remote setup:
 
-`
-$ git remote -v
+`$ git remote -v
 heroku	https://git.heroku.com/botgammon.git (fetch)
 heroku	https://git.heroku.com/botgammon.git (push)
 origin	https://github.com/hanggammon/botgammon.git (fetch)
