@@ -14,15 +14,14 @@ Deploy:
 * heroku login
 * heroku git:remote -a botgammon
 
+Correct git remote setup:
+
+`
 $ git remote -v
-
 heroku	https://git.heroku.com/botgammon.git (fetch)
-
 heroku	https://git.heroku.com/botgammon.git (push)
-
 origin	https://github.com/hanggammon/botgammon.git (fetch)
-
-origin	https://github.com/hanggammon/botgammon.git (push)
+origin	https://github.com/hanggammon/botgammon.git (push)`
 
 * git push heroku master
 
