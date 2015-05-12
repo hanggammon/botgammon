@@ -16,8 +16,12 @@ Deploy:
 * git push heroku master
 
 $ git remote -v
+
 heroku	https://git.heroku.com/botgammon.git (fetch)
+
 heroku	https://git.heroku.com/botgammon.git (push)
+
 origin	https://github.com/hanggammon/botgammon.git (fetch)
+
 origin	https://github.com/hanggammon/botgammon.git (push)
 
