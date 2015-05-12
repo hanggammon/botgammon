@@ -16,11 +16,13 @@ Deploy:
 
 Correct git remote setup:
 
-```$ git remote -v
+<pre>
+$ git remote -v
 heroku	https://git.heroku.com/botgammon.git (fetch)
 heroku	https://git.heroku.com/botgammon.git (push)
 origin	https://github.com/hanggammon/botgammon.git (fetch)
-origin	https://github.com/hanggammon/botgammon.git (push)```
+origin	https://github.com/hanggammon/botgammon.git (push)
+</pre>
 
 * git push heroku master
 
