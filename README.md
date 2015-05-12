@@ -10,7 +10,8 @@ Stuff to set up:
 Stuff to read:
 * https://mmcgrana.github.io/2012/09/getting-started-with-go-on-heroku.html
 
-Deploy:
+Initial Setup:
+* godep restore
 * heroku login
 * heroku git:remote -a botgammon
 
@@ -24,8 +25,11 @@ origin	https://github.com/hanggammon/botgammon.git (fetch)
 origin	https://github.com/hanggammon/botgammon.git (push)
 </pre>
 
+Normal Deploy:
 * git push heroku master
 
+Force Deploy:
+* git push heroku +master
 
-Initial heroku app create (already done)
+Initial heroku app creation (already done, should no longer be needed)
 * heroku create -b https://github.com/heroku/heroku-buildpack-go.git
