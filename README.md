@@ -11,4 +11,6 @@ Stuff to read:
 * https://mmcgrana.github.io/2012/09/getting-started-with-go-on-heroku.html
 
 Deploy:
-* heroku create -b https://github.com/heroku/heroku-buildpack-go.git
+* (already done?) heroku create -b https://github.com/heroku/heroku-buildpack-go.git
+* heroku git:remote -a botgammon 
+* git push heroku master
