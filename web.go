@@ -36,6 +36,7 @@ func main() {
 	// Use Gorilla routing for all real routes
 	r := mux.NewRouter()
 	r.HandleFunc("/", indexHandler)
+	r.HandleFunc("/socket.io/", server)
 	r.PathPrefix("/js/").Handler(http.StripPrefix("/js/", http.FileServer(http.Dir("js"))))
 	r.PathPrefix("/img/").Handler(http.StripPrefix("/img/", http.FileServer(http.Dir("img"))))
 
