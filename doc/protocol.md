@@ -14,13 +14,17 @@ Creates a new game, JSON response contains the ID of the newly created game.
     Request:       PATCH /api/v1/games/<id>/reset
     Response:      HTTP 200
 
-Resets the game at <id>. Clients are notified through a WebSocket protocol
+Resets the game at id. Clients are notified through a WebSocket protocol
 message of the reset event and all sockets/players are dropped from the game.
 
     Request:       POST /api/v1/games/<id>/players
     Request Body:  { "name" : "mark" }
     Response:      HTTP 200
-    Response Body: { "websocket" : "XXXX" }
+    Response Body: { "websocket" : "<socket URI>" }
+
+Adds a player to the game at id. The player name is passed in as a request
+field through JSON. The response JSON contains a socket URI for the WebSocket
+client/server connection.
 
 Response bodies are in JSON format. In addition to the indicated fields the
 following fields are present for indicating API success or failure:
