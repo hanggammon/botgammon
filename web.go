@@ -6,14 +6,14 @@ import (
 	"os"
 
 	"github.com/gorilla/mux"
-   "github.com/gorilla/websocket"
+	"github.com/gorilla/websocket"
 )
 
 func main() {
 	// Use Gorilla routing for all real routes
 	r := mux.NewRouter()
 	r.HandleFunc("/", hello)
-        r.PathPrefix("/js/").Handler(http.StripPrefix("/js/", http.FileServer(http.Dir("js"))))
+	r.PathPrefix("/js/").Handler(http.StripPrefix("/js/", http.FileServer(http.Dir("js"))))
 
 	fmt.Println("listening...")
 
