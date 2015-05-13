@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"html/template"
 	"net/http"
 	"os"
 
@@ -9,10 +10,14 @@ import (
 	"github.com/gorilla/websocket"
 )
 
+type Board struct {
+	Name string
+}
+
 func main() {
 	// Use Gorilla routing for all real routes
 	r := mux.NewRouter()
-	r.HandleFunc("/", hello)
+	r.HandleFunc("/", indexHandler)
 	r.PathPrefix("/js/").Handler(http.StripPrefix("/js/", http.FileServer(http.Dir("js"))))
 
 	fmt.Println("listening...")
@@ -25,6 +30,17 @@ func main() {
 	}
 }
 
-func hello(res http.ResponseWriter, req *http.Request) {
-	fmt.Fprintln(res, "what's up, world!")
+var indexTemplate = template.Must(template.New("indexTemplate").ParseFiles("templates/index.html"))
+
+func indexHandler(w http.ResponseWriter, r *http.Request) {
+
+	blankBoard := Board{`Blank Board`}
+
+	pageVars := struct {
+		Board Board
+	}{blankBoard}
+
+	if err := indexTemplate.ExecuteTemplate(w, "index.html", pageVars); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
 }
