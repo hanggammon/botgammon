@@ -4,6 +4,7 @@ Protocol Specification
 REST API
 --------
 
+### Create Game
     Request:       POST /api/v1/games
     Response:      HTTP 200
     Response Body: { "id" : "0" }
@@ -11,12 +12,14 @@ REST API
 Creates a new game, JSON response contains the ID of the newly created game.
 
 
+### Reset Game
     Request:       PATCH /api/v1/games/<id>/reset
     Response:      HTTP 200
 
 Resets the game at id. Clients are notified through a WebSocket protocol
 message of the reset event and all sockets/players are dropped from the game.
 
+### Add Player
     Request:       POST /api/v1/games/<id>/players
     Request Body:  { "name" : "mark" }
     Response:      HTTP 200
