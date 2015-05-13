@@ -29,6 +29,7 @@ Adds a player to the game at id. The player name is passed in as a request
 field through JSON. The response JSON contains a socket URI for the WebSocket
 client/server connection.
 
+### Status Reporting
 Response bodies are in JSON format. In addition to the indicated fields the
 following fields are present for indicating API success or failure:
 
