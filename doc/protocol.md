@@ -3,13 +3,36 @@ Protocol Specification
 
 REST API
 --------
-The following API has a game ID parameter which is intended to support multiple concurrent games, but initially we'll be using id=0 for all calls.
 
-    /game/<id>/new
-Resets the existing game in progress (all clients are notified of the reset event) and starts a new game with clean game state. Existing players and sockets are retained.
+    Request:       POST /api/v1/games
+    Response:      HTTP 200
+    Response Body: { "id" : "0" }
 
-    /game/<id>/addplayer?name=<playername>
-Adds the player 'playername' to the game. On success HTTP 200 is returned. If there are no free spots left in the game then HTTP 418 (I'm a teapot) is returned and the error message is sent as plaintext in the HTTP response.
+Creates a new game, JSON response contains the ID of the newly created game.
+
+
+    Request:       PATCH /api/v1/games/<id>/reset
+    Response:      HTTP 200
+
+Resets the game at <id>. Clients are notified through a WebSocket protocol
+message of the reset event and all sockets/players are dropped from the game.
+
+    Request:       POST /api/v1/games/<id>/players
+    Request Body:  { "name" : "mark" }
+    Response:      HTTP 200
+    Response Body: { "websocket" : "XXXX" }
+
+Response bodies are in JSON format. In addition to the indicated fields the
+following fields are present for indicating API success or failure:
+
+On success:
+
+    { "status" : "OK" }
+
+On failure:
+
+    { "status" : "FAILED",
+      "error" : "Maximum number of players reached for game." }
 
 WebSocket Protocol
 ------------------
