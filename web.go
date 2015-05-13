@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/gorilla/mux"
+   "github.com/gorilla/websocket"
 )
 
 func main() {
