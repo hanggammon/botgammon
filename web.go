@@ -42,9 +42,9 @@ func main() {
 	fmt.Println("listening...")
 
 	// Set up go http to pass off all web access to gorilla mux
-	http.Handle("/", r)
+	http.Handle("/", server)
 	con, err := net.Listen("tcp4", ":9090")
-	err2 := http.Serve(con, r)
+	err2 := http.Serve(con, nil)
 	if err2 != nil {
 		panic(err2)
 	}
