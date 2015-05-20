@@ -47,39 +47,41 @@ Socket.IO Protocol
 
 ### Board State JSON representation
 
+The regular board slots are represented as an array with 24 elements. Each slot
+element has a sub-array that contains an array. Pieces are represented as
+integers denoting the team (0 for white, 1 for black). The collected and hit
+pieces are represented by an array each, with the same semantics as a regular
+slot.
+
     { "board":
              { "slots":
                       [
-                        { "index": "0", "pieces":
-                                                [
-                                                   { "id": "4", "team": "white"},
-                                                   { "id": "5", "team": "white"}
-                                                ]
-                        },
-                        { "index": "1", "pieces": [] },
-                        { "index": "2", "pieces": [] },
-                        { "index": "3", "pieces": [] },
-                        { "index": "4", "pieces": [] },
-                        { "index": "5", "pieces":
-                                                [
-                                                   { "id": "13", "team": "black"},
-                                                   { "id": "14", "team": "black"}
-                                                ]
-                        },
-
-                        ...
-
-                        { "index": "23", "pieces":
-                                                 [
-                                                    { "id": "29", "team": "black"},
-                                                    { "id": "30", "team": "black"}
-                                                 ]
-                        },
-                        { "index": "Hit", "pieces":
-                                                  [
-                                                     {"id": "11", "team": "white"}
-                                                  ]
-                        }
-                      ]
+                        [0, 0],
+                        [],
+                        [],
+                        [],
+                        [],
+                        [1, 1, 1, 1, 1],
+                        [],
+                        [1, 1, 1],
+                        [],
+                        [],
+                        [],
+                        [0, 0, 0, 0, 0],
+                        [1, 1, 1, 1, 1],
+                        [],
+                        [],
+                        [],
+                        [0, 0, 0],
+                        [],
+                        [0, 0, 0, 0, 0],
+                        [],
+                        [],
+                        [],
+                        [],
+                        [1, 1]
+                      ],
+              "hit" : [],
+              "collected" : [],
             }
     }
