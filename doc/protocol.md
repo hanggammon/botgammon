@@ -66,36 +66,36 @@ integers denoting the team (0 for white, 1 for black). The collected and hit
 pieces are represented by an array each, with the same semantics as a regular
 slot.
 
-   { "slots":
-            [
-              [0, 0],
-              [],
-              [],
-              [],
-              [],
-              [1, 1, 1, 1, 1],
-              [],
-              [1, 1, 1],
-              [],
-              [],
-              [],
-              [0, 0, 0],
-              [1, 1, 1],
-              [],
-              [],
-              [],
-              [0, 0, 0],
-              [],
-              [0, 0, 0, 0, 0],
-              [],
-              [],
-              [],
-              [],
-              [1, 1]
-            ],
-    "hit" : [0, 1],
-    "collected" : [1, 0]
-  }
+    { "slots":
+             [
+               [0, 0],
+               [],
+               [],
+               [],
+               [],
+               [1, 1, 1, 1, 1],
+               [],
+               [1, 1, 1],
+               [],
+               [],
+               [],
+               [0, 0, 0],
+               [1, 1, 1],
+               [],
+               [],
+               [],
+               [0, 0, 0],
+               [],
+               [0, 0, 0, 0, 0],
+               [],
+               [],
+               [],
+               [],
+               [1, 1]
+             ],
+     "hit" : [0, 1],
+     "collected" : [1, 0]
+   }
 
 ### Move Request
 
