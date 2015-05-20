@@ -82,6 +82,6 @@ slot.
                         [1, 1]
                       ],
               "hit" : [],
-              "collected" : [],
+              "collected" : []
             }
     }
