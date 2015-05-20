@@ -3,12 +3,25 @@
 	"GoVersion": "go1.4.2",
 	"Deps": [
 		{
+			"ImportPath": "github.com/googollee/go-engine.io",
+			"Rev": "597faf3df88a01780a5881fafbcbccd9d5c3fab0"
+		},
+		{
+			"ImportPath": "github.com/googollee/go-socket.io",
+			"Comment": "0.9.x-23-g31886c5",
+			"Rev": "31886c5636253259f3c028ee398e780d2b1d1696"
+		},
+		{
 			"ImportPath": "github.com/gorilla/context",
 			"Rev": "215affda49addc4c8ef7e2534915df2c8c35c6cd"
 		},
 		{
 			"ImportPath": "github.com/gorilla/mux",
 			"Rev": "94903de8c98a68d8b4483c529b26a5d146e386a2"
+		},
+		{
+			"ImportPath": "github.com/gorilla/websocket",
+			"Rev": "6fd0f867fef40c540fa05c59f86396de10a632a6"
 		}
 	]
 }
