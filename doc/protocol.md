@@ -20,10 +20,19 @@ Resets the game at id. Clients are notified through a Socket.IO protocol
 message of the reset event and all sockets/players are dropped from the game.
 
 ### Add Player
-    Request:       POST /api/v1/games/<id>/players
-    Request Body:  { "name" : "mark" }
-    Response:      HTTP 200
-    Response Body: { "websocket" : "<socket URI>" }
+    Request        : POST /api/v1/games/<id>/players
+    Request Body   : { "name" : "mark" }
+    Response       : HTTP 200
+    Response Body  : { "websocket" : "<socket URI>",
+                       "seat" : 1 }
+
+    (optional)
+    Request        : POST /api/v1/games/<id>/players
+    Request Body   : { "name" : "baran",
+                       "seat" : 1 }
+    Response       : HTTP 200
+    Response Body  : { "websocket" : "<socket URI>",
+                       "seat" : 1 }
 
 Adds a player to the game at id. The player name is passed in as a request
 field through JSON. The response JSON contains a socket URI for the Socket.IO
@@ -41,6 +50,10 @@ On failure:
 
     { "status" : "FAILED",
       "error" : "Maximum number of players reached for game." }
+
+    { "status" : "FAILED",
+      "error" : "Seat X is occupied." }
+
 
 Socket.IO Protocol
 ------------------
