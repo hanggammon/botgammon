@@ -110,3 +110,19 @@ and players[2] is playing against players[3].
       "diceroll": [6, 2],
       "boards": [ {...}, {...}]
     }
+
+### Move Response
+
+In response to a move request, the client generates a JSON response to specify
+the move it will perform. The response contains an array of at least 1 at most
+4 elements, where each element specifies an individual piece move corresponding
+to a single die in the form of [fromslot, toslot]. A separate element is
+required for each die component even if the same piece is being moved to
+consume multiple dice.
+
+    { "moves":
+             [
+               [3, 9],
+               [8, 10]
+             ]
+    }
