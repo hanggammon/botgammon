@@ -172,22 +172,18 @@ function initTeamScores()
 function pushAllGameState()
 {
    for (var key in gameState) {
-      queueStateUpdate(key, gameState[key]);
    }
-
-   commitQueuedStateUpdates();
 }
 
 // Pull all game state from the server
 function pullAllGameState()
 {
-   var all_state = gapi.hangout.data.getState();
+   var all_state = {};
    for (var key in all_state) {
       if (key != "started" && key != "history") {
          gameState[key] = all_state[key];
       }
    }
-   stateMetaData = gapi.hangout.data.getStateMetadata();
 }
 
 // Get key for history updates
@@ -195,19 +191,6 @@ function getHistoryUpdateKey()
 {
    return 'historyUpdate';
 }
-
-// Get the started variable
-function getStarted()
-{
-   return gapi.hangout.data.getValue("started");
-}
-
-// Set started variable to 1
-function setStarted()
-{
-   gapi.hangout.data.setValue("started", "started");
-}
-
 
 // Reset the game state
 function resetGameState()
@@ -227,15 +210,8 @@ function resetGameState()
 // Initialize the game state to default values
 function initGameState()
 {
-   var started = getStarted();
-   if (started != "started") {
-      setStarted();
-      initTeamScores();
-      resetGameState();
-      stateMetaData = gapi.hangout.data.getStateMetadata();
-   } else {
-      pullAllGameState();
-   }
+   initTeamScores();
+   resetGameState();
 }
 
 // Return a string corresponding to the game state
