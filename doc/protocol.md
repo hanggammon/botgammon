@@ -66,35 +66,47 @@ integers denoting the team (0 for white, 1 for black). The collected and hit
 pieces are represented by an array each, with the same semantics as a regular
 slot.
 
-    { "board":
-             { "slots":
-                      [
-                        [0, 0],
-                        [],
-                        [],
-                        [],
-                        [],
-                        [1, 1, 1, 1, 1],
-                        [],
-                        [1, 1, 1],
-                        [],
-                        [],
-                        [],
-                        [0, 0, 0],
-                        [1, 1, 1],
-                        [],
-                        [],
-                        [],
-                        [0, 0, 0],
-                        [],
-                        [0, 0, 0, 0, 0],
-                        [],
-                        [],
-                        [],
-                        [],
-                        [1, 1]
-                      ],
-              "hit" : [0, 1],
-              "collected" : [1, 0]
-            }
+   { "slots":
+            [
+              [0, 0],
+              [],
+              [],
+              [],
+              [],
+              [1, 1, 1, 1, 1],
+              [],
+              [1, 1, 1],
+              [],
+              [],
+              [],
+              [0, 0, 0],
+              [1, 1, 1],
+              [],
+              [],
+              [],
+              [0, 0, 0],
+              [],
+              [0, 0, 0, 0, 0],
+              [],
+              [],
+              [],
+              [],
+              [1, 1]
+            ],
+    "hit" : [0, 1],
+    "collected" : [1, 0]
+  }
+
+### Move Request
+
+This is the JSON request sent by the server to a client to request a move
+response. The indices are flipped around by the server so the client receiving
+the request is always player 0, their pieces are represented by team 0, they are
+on boards[0] and the board is flipped so their team is moving in the positive
+direction (0->23). It is implicit that players[0] is playing against players[1]
+and players[2] is playing against players[3].
+
+    { "players": [ "baran", "mrj", "mrpdaem0n", "bpoess" ],
+      "diceroll": [6, 2],
+      "boards": [ {...}, {...}]
     }
