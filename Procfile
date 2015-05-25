@@ -1,1 +1,1 @@
-web: botgammon
+main: botgammon
