@@ -1,7 +1,6 @@
+// defines app and exposes underscore.js "_" everywhere within app
 var botgammonApp = angular.module('botgammonApp', [])
-  // allow DI for use in controllers, unit tests
   .constant('_', window._)
-  // use in views, ng-repeat="x in _.range(3)"
   .run(function ($rootScope) {
      $rootScope._ = window._;
   });
