@@ -1,0 +1,21 @@
+@import "compass/reset";
+@import "compass/utilities";
+
+@mixin uniform-links($decoration: none, $color: inherit) {
+  a:link, a:visited, a:hover, a:active {
+    text-decoration: $decoration;
+    color: $color;
+  }
+}
+
+@mixin links($decoration: none, $color: inherit, $hoverDecoration:underline, $hoverColor:inherit) {
+  a:link, a:visited, a:active {
+    text-decoration: $decoration;
+    color: $color;
+  }
+
+  a:hover {
+    color: $hoverColor;
+    text-decoration: $hoverDecoration;
+  }
+}

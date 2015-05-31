@@ -1,0 +1,57 @@
+@import "base";
+
+$main-background: #fff;
+
+$header-height: 65px;
+$header-background: #000;
+
+$sitename-color: #fff;
+$sitename-font-size: 35px;
+
+html {
+  font-family: arial, sans-serif;
+}
+
+body {
+  background-color: $main-background;
+  height: 100%;
+  margin: 20px;
+}
+
+table.board {
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  margin-right: 50px;
+  margin-top: 50px
+}
+
+td.slot {
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  height: 100px;
+  width: 25px;
+}
+
+td.topslot {
+  @extend td.slot;
+
+  vertical-align: top;
+}
+
+td.bottomslot {
+  @extend td.slot;
+
+  vertical-align: bottom;
+} 
+
+ul.slot {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+div#refreshButtonContainer {
+  margin-top: 50px;
+}

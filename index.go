@@ -9,9 +9,9 @@ func init() {
 	MuxRouter.HandleFunc("/", indexHandler)
 }
 
-var indexTemplate = template.Must(template.New("indexTemplate").Delims("[[[", "]]]").ParseFiles("templates/index.html"))
-
 func indexHandler(w http.ResponseWriter, r *http.Request) {
+	var indexTemplate = template.Must(template.New("indexTemplate").Delims("[[[", "]]]").ParseFiles("templates/index.html"))
+
 	if err := indexTemplate.ExecuteTemplate(w, "index.html", nil); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
