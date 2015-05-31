@@ -64,8 +64,8 @@ td.slot, td.topslot, td.bottomslot {
   text-align: center;
   border-style: solid;
   border-width: 1px;
-  height: 100px;
-  width: 25px; }
+  height: 150px;
+  width: 30px; }
 
 td.topslot {
   vertical-align: top; }
@@ -80,3 +80,23 @@ ul.slot {
 
 div#refreshButtonContainer {
   margin-top: 50px; }
+
+div.piece, div.redpiece, div.greenpiece {
+  width: 20px;
+  height: 20px;
+  margin: 1px 5px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%; }
+
+div.redpiece {
+  background-color: red;
+  background-image: -moz-radial-gradient(5px 5px 45deg, circle cover, orange, red);
+  background-image: -webkit-radial-gradient(5px 5px, circle cover, orange, red);
+  background-image: radial-gradient(circle cover at 5px 5px 45deg, #ffa500, #ff0000); }
+
+div.greenpiece {
+  background-color: green;
+  background-image: -moz-radial-gradient(5px 5px 45deg, circle cover, lightgreen, green);
+  background-image: -webkit-radial-gradient(5px 5px, circle cover, lightgreen, green);
+  background-image: radial-gradient(circle cover at 5px 5px 45deg, #90ee90, #008000); }
