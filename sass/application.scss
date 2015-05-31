@@ -61,27 +61,20 @@ div.piece {
   height: 20px;
   margin: 1px 5px;
 
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
+  @include border-radius(50%);
 }
 
 div.redpiece {
   @extend div.piece;
 
   background-color: red;
-  background-image: -moz-radial-gradient(5px 5px 45deg, circle cover, orange, red);
-  background-image: -webkit-radial-gradient(5px 5px, circle cover, orange, red);
-  background-image: radial-gradient(5px 5px 45deg, circle cover, orange, red);
+  @include background-image(radial-gradient(5px 5px, circle cover, orange, red));
 }
 
 div.greenpiece {
   @extend div.piece;
 
   background-color: green;
-  background-image: -moz-radial-gradient(5px 5px 45deg, circle cover, lightgreen, green);
-  background-image: -webkit-radial-gradient(5px 5px, circle cover, lightgreen, green);
-  background-image: radial-gradient(5px 5px 45deg, circle cover, lightgreen, green);
-
+  @include background-image(radial-gradient(5px 5px, circle cover, lightgreen, green));
 }
 
