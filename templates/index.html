@@ -25,19 +25,17 @@
     <td class="topslot" ng-repeat="slotIndex in _.range(0, 12)">
       <ul class="slot">
         <li ng-repeat="piece in board.slots[slotIndex] track by $index">
-          <div class="redpiece" ng-if="piece == 0"> </div>
-          <div class="greenpiece" ng-if="piece == 1"> </div>
+          <div ng-class="piece == 0 ? 'redpiece' : 'greenpiece'"> </div>
         </li>
       </ul>
     </td>
   </tr>
 
   <tr>
-    <td class="bottomslot" ng-repeat="slotIndex in _.range(12, 24).reverse()">
+    <td class="bottomslot" ng-repeat="slotIndex in _.range(23, 11, -1)">
       <ul class="slot">
-        <li ng-repeat="piece in board.slots[slotIndex].slice(0).reverse() track by $index">
-          <div class="redpiece" ng-if="piece == 0"> </div>
-          <div class="greenpiece" ng-if="piece == 1"> </div>
+        <li ng-repeat="piece in board.slots[slotIndex].slice().reverse() track by $index">
+          <div ng-class="piece == 0 ? 'redpiece' : 'greenpiece'"> </div>
         </li>
       </ul>
     </td>
