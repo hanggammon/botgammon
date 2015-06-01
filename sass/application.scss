@@ -21,7 +21,7 @@ body {
 table.board {
   display: inline-block;
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
   margin-right: 50px;
   margin-top: 50px
 }
@@ -44,7 +44,27 @@ td.bottomslot {
   @extend td.slot;
 
   vertical-align: bottom;
+}
+
+td.topcollection {
+  @extend td.topslot;
+
+  border-right-width: 3px;
+  background-color: pink;
 } 
+
+td.bottomcollection {
+  @extend td.bottomslot;
+
+  border-left-width: 3px;
+  background-color: lightgreen;
+}
+
+td.hit {
+  @extend td.slot;
+
+  background-color: lightgrey;
+}
 
 ul.slot {
   list-style-type: none;

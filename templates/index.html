@@ -23,7 +23,7 @@
 <table class="board" ng-repeat="board in game.boards">
   <tr>
 
-   <td rowspan="2" class="topslot">
+   <td rowspan="2" class="topcollection">
      <ul class="slot">
        <li ng-repeat="piece in board.collected track by $index">
          <div class="redpiece" ng-if="piece == 0"> </div>
@@ -39,7 +39,7 @@
      </ul>
    </td>
 
-   <td rowspan="2" class="slot">
+   <td rowspan="2" class="hit">
      <ul class="slot">
        <li ng-repeat="piece in board.hit track by $index">
          <div ng-class="piece == 0 ? 'redpiece' : 'greenpiece'"> </div>
@@ -55,7 +55,7 @@
      </ul>
    </td>
 
-   <td rowspan="2" class="bottomslot">
+   <td rowspan="2" class="bottomcollection">
      <ul class="slot">
        <li ng-repeat="piece in board.collected track by $index">
          <div class="greenpiece" ng-if="piece == 1"> </div>

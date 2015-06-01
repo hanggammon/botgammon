@@ -56,22 +56,33 @@ body {
 table.board {
   display: inline-block;
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
   margin-right: 50px;
   margin-top: 50px; }
 
-td.slot, td.topslot, td.bottomslot {
+td.slot, td.topslot, td.topcollection, td.bottomslot, td.bottomcollection, td.hit {
   text-align: center;
   border-style: solid;
   border-width: 1px;
   height: 150px;
   width: 30px; }
 
-td.topslot {
+td.topslot, td.topcollection {
   vertical-align: top; }
 
-td.bottomslot {
+td.bottomslot, td.bottomcollection {
   vertical-align: bottom; }
+
+td.topcollection {
+  border-right-width: 3px;
+  background-color: pink; }
+
+td.bottomcollection {
+  border-left-width: 3px;
+  background-color: lightgreen; }
+
+td.hit {
+  background-color: lightgrey; }
 
 ul.slot {
   list-style-type: none;
