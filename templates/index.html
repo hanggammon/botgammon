@@ -22,23 +22,57 @@
 
 <table class="board" ng-repeat="board in game.boards">
   <tr>
-    <td class="topslot" ng-repeat="slotIndex in _.range(0, 12)">
-      <ul class="slot">
-        <li ng-repeat="piece in board.slots[slotIndex] track by $index">
-          <div ng-class="piece == 0 ? 'redpiece' : 'greenpiece'"> </div>
-        </li>
-      </ul>
-    </td>
+
+   <td rowspan="2" class="topslot">
+     <ul class="slot">
+       <li ng-repeat="piece in board.collected track by $index">
+         <div class="redpiece" ng-if="piece == 0"> </div>
+       </li>
+     </ul>
+   </td>
+
+   <td class="topslot" ng-repeat="slotIndex in _.range(0, 6)">
+     <ul class="slot">
+       <li ng-repeat="piece in board.slots[slotIndex] track by $index">
+         <div ng-class="piece == 0 ? 'redpiece' : 'greenpiece'"> </div>
+       </li>
+     </ul>
+   </td>
+
+   <td rowspan="2" class="slot">
+     <ul class="slot">
+       <li ng-repeat="piece in board.hit track by $index">
+         <div ng-class="piece == 0 ? 'redpiece' : 'greenpiece'"> </div>
+       </li>
+     </ul>
+   </td>
+
+   <td class="topslot" ng-repeat="slotIndex in _.range(6, 12)">
+     <ul class="slot">
+       <li ng-repeat="piece in board.slots[slotIndex] track by $index">
+         <div ng-class="piece == 0 ? 'redpiece' : 'greenpiece'"> </div>
+       </li>
+     </ul>
+   </td>
+
+   <td rowspan="2" class="bottomslot">
+     <ul class="slot">
+       <li ng-repeat="piece in board.collected track by $index">
+         <div class="greenpiece" ng-if="piece == 1"> </div>
+       </li>
+     </ul>
+   </td>
+
   </tr>
 
   <tr>
-    <td class="bottomslot" ng-repeat="slotIndex in _.range(23, 11, -1)">
-      <ul class="slot">
-        <li ng-repeat="piece in board.slots[slotIndex].slice().reverse() track by $index">
-          <div ng-class="piece == 0 ? 'redpiece' : 'greenpiece'"> </div>
-        </li>
-      </ul>
-    </td>
+   <td class="bottomslot" ng-repeat="slotIndex in _.range(23, 11, -1)">
+     <ul class="slot">
+       <li ng-repeat="piece in board.slots[slotIndex].slice().reverse() track by $index">
+         <div ng-class="piece == 0 ? 'redpiece' : 'greenpiece'"> </div>
+       </li>
+     </ul>
+   </td>
   </tr>
 
 </table>
