@@ -28,10 +28,9 @@ table.board {
 
 td.slot {
   text-align: center;
-  border-style: solid;
-  border-width: 1px;
   height: 150px;
   width: 30px;
+  position: relative;
 }
 
 td.topslot {
@@ -63,7 +62,48 @@ td.bottomcollection {
 td.hit {
   @extend td.slot;
 
-  background-color: lightgrey;
+  background-color: black;
+}
+
+div.triangle {
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  z-index: -10;
+}
+
+div.toplighttriangle {
+  @extend div.triangle;
+
+  border-top: 120px solid lightgray;
+}
+
+div.topdarktriangle {
+  @extend div.triangle;
+
+  border-top: 120px solid rgb(170, 170, 170);
+}
+
+div.bottomtriangle {
+  @extend div.triangle;
+
+  padding-top:30px;
+}
+
+div.bottomlighttriangle {
+  @extend div.bottomtriangle;
+
+  border-bottom: 120px solid lightgray;
+}
+
+div.bottomdarktriangle {
+  @extend div.bottomtriangle;
+
+  border-bottom: 120px solid rgb(170, 170, 170);
 }
 
 ul.slot {

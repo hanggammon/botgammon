@@ -62,10 +62,9 @@ table.board {
 
 td.slot, td.topslot, td.topcollection, td.bottomslot, td.bottomcollection, td.hit {
   text-align: center;
-  border-style: solid;
-  border-width: 1px;
   height: 150px;
-  width: 30px; }
+  width: 30px;
+  position: relative; }
 
 td.topslot, td.topcollection {
   vertical-align: top; }
@@ -82,7 +81,32 @@ td.bottomcollection {
   background-color: lightgreen; }
 
 td.hit {
-  background-color: lightgrey; }
+  background-color: black; }
+
+div.triangle, div.toplighttriangle, div.topdarktriangle, div.bottomtriangle, div.bottomlighttriangle, div.bottomdarktriangle {
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  z-index: -10; }
+
+div.toplighttriangle {
+  border-top: 120px solid lightgray; }
+
+div.topdarktriangle {
+  border-top: 120px solid #aaaaaa; }
+
+div.bottomtriangle, div.bottomlighttriangle, div.bottomdarktriangle {
+  padding-top: 30px; }
+
+div.bottomlighttriangle {
+  border-bottom: 120px solid lightgray; }
+
+div.bottomdarktriangle {
+  border-bottom: 120px solid #aaaaaa; }
 
 ul.slot {
   list-style-type: none;

@@ -32,6 +32,7 @@
    </td>
 
    <td class="topslot" ng-repeat="slotIndex in _.range(0, 6)">
+     <div ng-class-odd="'toplighttriangle'" ng-class-even="'topdarktriangle'"></div>
      <ul class="slot">
        <li ng-repeat="piece in board.slots[slotIndex] track by $index">
          <div ng-class="piece == 0 ? 'redpiece' : 'greenpiece'"> </div>
@@ -48,6 +49,7 @@
    </td>
 
    <td class="topslot" ng-repeat="slotIndex in _.range(6, 12)">
+     <div ng-class-odd="'toplighttriangle'" ng-class-even="'topdarktriangle'"></div>
      <ul class="slot">
        <li ng-repeat="piece in board.slots[slotIndex] track by $index">
          <div ng-class="piece == 0 ? 'redpiece' : 'greenpiece'"> </div>
@@ -56,6 +58,7 @@
    </td>
 
    <td rowspan="2" class="bottomcollection">
+     <div ng-class-odd="'bottomdarktriangle'" ng-class-even="'bottomlighttriangle'"></div>
      <ul class="slot">
        <li ng-repeat="piece in board.collected track by $index">
          <div class="greenpiece" ng-if="piece == 1"> </div>
@@ -67,6 +70,7 @@
 
   <tr>
    <td class="bottomslot" ng-repeat="slotIndex in _.range(23, 11, -1)">
+     <div ng-class-odd="'bottomdarktriangle'" ng-class-even="'bottomlighttriangle'"></div>
      <ul class="slot">
        <li ng-repeat="piece in board.slots[slotIndex].slice().reverse() track by $index">
          <div ng-class="piece == 0 ? 'redpiece' : 'greenpiece'"> </div>
