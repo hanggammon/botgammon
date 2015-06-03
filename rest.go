@@ -84,6 +84,7 @@ func v1_showGameHandler(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil || game != 0 {
 		w.WriteHeader(http.StatusNotFound)
+		return
 	}
 
 	var response v1_showGameResponse
