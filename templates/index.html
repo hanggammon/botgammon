@@ -17,10 +17,10 @@
 <body ng-controller="GameCtrl">
 
 <div id="debugRestResponse">
-{{game}}
+{{model.game}}
 </div>
 
-<table class="board" ng-repeat="board in game.boards">
+<table class="board" ng-repeat="board in model.game.boards">
   <tr>
 
    <td rowspan="2" class="topcollection">
